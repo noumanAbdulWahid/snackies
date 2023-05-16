@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+*{
+    font-family: 'Nunito' , sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 63%;
+    overflow:auto;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    background: #192a56;
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+.btn:hover{
+    background: rgb(189, 23, 23);
+    letter-spacing: .1rem;
+}
+
+
+/* nav bar css start */
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #FFF;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+}
+header .logo a{
+    color: #192a56;
+    font-size: 4.5rem;
+    font-family: 'Dancing Script', sans-serif;
+    font-weight: bolder;
+}
+
+header .side-bar{
+    position: fixed;
+    width: 360px;
+    height: 100vh;
+    top: 78px;
+    left: 0;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);   
+    z-index: 10000;
+}
+
+header .side-bar .nav-bar{
+    border-top: .2rem solid rgba(0, 0, 0, .2);
+    margin-top: 20px;
+    padding-top: 20px;
+}
+header .side-bar .nav-bar a{
+    display: block;
+    font-size: 2rem;
+    border-radius: .5rem;
+    padding: 1.5rem;
+    color: #666;
+    margin: .5rem;
+    background: #eee;
+}
+header .side-bar .nav-bar a.active,
+header .side-bar .nav-bar a:hover{
+    color: #fff;
+    background: rgb(189, 23, 23);
+}
+
+
+
+header #menu-bar{
+    cursor: pointer;
+    text-align: center;
+    font-size: 3rem;
+    color: rgb(189, 23, 23);
+    display: none;
+    margin: 2rem;
+}
+
+
+header .title p{
+    font-size: 3.8rem;
+    font-weight: bolder;
+    color: rgb(189, 23, 23);
+}
+header .title p span{
+    color: #192a56;
+}
+header .design p{
+    font-size: 2rem;
+    color: rgb(189, 23, 23);
+    font-weight: bolder;
+}
+header .design p span{
+    color: #192a56;
+}
+header .side-bar .account-box .content span{
+    font-size: 1.9rem;
+    color: rgb(189, 23, 23);
+    font-weight: bolder;
+}
+header .side-bar{
+    text-align: center;
+}
+header .side-bar .account-box .content{
+    margin: 20px;
+}
+header .side-bar #menu-close{
+    position: absolute;
+    top: 2.3rem;
+    right: 2.3rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #666;
+    display: none;
+}
+header .side-bar #menu-close:hover{
+    color: rgb(189, 23, 23);
+}
+
+
+/* Nav bar Css end */
+
+/* home css start */
+.container{
+    margin-left: 360px;
+    padding-top: 7%;
+    padding: 5%;
+}
+.container .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap:1.5rem;
+    max-width: 1200px;
+    margin:0 auto;
+    align-items: flex-start;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+
+}
+.container .box-container .box{
+    border-radius: .5rem;
+    padding:2rem;
+    background-color: #eee;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    border: .1rem solid #192a56;
+    text-align: center;
+}
+.container .box-container .box h3{
+    font-size: 4rem;
+   color:#192a56;
+}
+.container .box-container .box p{
+    margin-top: 1.5rem;
+   padding:1.5rem;
+   background-color: #fff;
+   color:rgb(189, 23, 23);
+   font-size: 2rem;
+   border-radius: .5rem;
+   border:.1rem solid #192a56;
+   font-weight: bold;
+}
+
+
+
+@media (max-width:991px) {
+    html{
+        font-size: 53%;
+
+    }
+    header{
+        padding: 1rem 2rem;
+    }
+    header .side-bar{
+        top: 67px;
+    }
+}
+@media (max-width:810px) {
+    header .design{
+        display: none;
+    }
+    header .side-bar{
+        top: 67px;
+        left: -100%;
+        /* clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); */
+    }
+    header .side-bar.active{
+        /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
+        left: 0;
+    }
+    header #menu-bar{
+        display: inline;
+    }
+    header .side-bar #menu-close{
+        display: inline;
+    }
+    .container{
+        margin-left: 4rem;
+        padding-top: 20%;
+    }
+}
+
+@media (max-width:550px) {
+    html{
+        font-size: 47%;
+
+    }
+    header .side-bar{
+        top: 62px;
+    }
+    
+}
